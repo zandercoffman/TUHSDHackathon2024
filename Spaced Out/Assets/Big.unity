@@ -1674,11 +1674,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2018940865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 881bd080a0cce8146bd2dd2990936814, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ee77f4accd00b948bd007e419e83704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 2018940867}
-  speed: 0
+  speed: 20
 --- !u!54 &2018940867
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1701,7 +1700,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80

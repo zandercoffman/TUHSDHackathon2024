@@ -4,25 +4,32 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Adjust this value to control the speed of camera movement
-    public float rotationSpeed = 100f; // Adjust this value to control the speed of camera rotation
+    public Transform trackedObject;
+    public float maxDistance = 10;
+    public float moveSpeed = 20;
+    public float updateSpeed = 10;
+    [Range(0,10)]
+    public float currentDistance = 5;
+    private string moveAxis = "Mouse ScrollWheel";
+    private GameObject ahead;
+    private MeshRenderer _renderer;
+    public float hideDistance = 1.5f;
 
-    private float mouseX, mouseY;
-
-    void Update()
+    // Start is called before the first frame update
+    void Start()
     {
-        // Camera Movement
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
+        ahead = new GameObject("ahead");
+        _renderer = trackedObject.gameObject.GetComponent<MeshRenderer>();
+    }
 
-        Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
-        transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
-
-        // Camera Rotation
-        mouseX += Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
-        mouseY -= Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime;
-        mouseY = Mathf.Clamp(mouseY, -90f, 90f); // Limit vertical rotation to prevent flipping
-
-        transform.eulerAngles = new Vector3(mouseY, mouseX, 0);
+    // Update is called once per frame
+    void LateUpdate()
+    {
+        ahead.transform.position = trackedObject.position + trackedObject.forward * (maxDistance * 0.25f);
+        currentDistance += Input.GetAxisRaw(moveAxis) * moveSpeed * Time.deltaTime;
+        currentDistance = Mathf.Clamp(currentDistance, 0, maxDistance);
+        transform.position = Vector3.MoveTowards(transform.position, trackedObject.position, updateSpeed * Time.deltaTime);
+        transform.LookAt(ahead.transform);
+        _renderer.enabled = (currentDistance > hideDistance);
     }
 }

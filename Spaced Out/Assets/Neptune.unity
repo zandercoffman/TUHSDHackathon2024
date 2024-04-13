@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
-  neptuneCamera: {fileID: 0}
+  neptuneCamera: {fileID: 928072399}
 --- !u!1 &36736188
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +179,6 @@ GameObject:
   m_Component:
   - component: {fileID: 36736191}
   - component: {fileID: 36736192}
-  - component: {fileID: 36736193}
   m_Layer: 0
   m_Name: CameraContainer
   m_TagString: Untagged
@@ -216,20 +215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb57a7d02d0c514a9ed55b83db8fd36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &36736193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 36736188}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 934305f3b0fcbf34f98964277fb994ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  rotationSpeed: 100
 --- !u!1 &928072396
 GameObject:
   m_ObjectHideFlags: 0

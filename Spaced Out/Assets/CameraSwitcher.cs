@@ -19,7 +19,7 @@ public class CameraSwitcher : MonoBehaviour
     {
          if (Input.GetKeyDown(KeyCode.Space)) {
             setNeptuneScene();
-         } else if (Input.GetKeyDown(KeyCode.W)) {
+         } else if (Input.GetKeyDown(KeyCode.R)) {
             setDefault();
          }
     }

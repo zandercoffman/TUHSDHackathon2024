@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraSwitcher : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class CameraSwitcher : MonoBehaviour
     {
          if (Input.GetKeyDown(KeyCode.Space)) {
             setNeptuneScene();
-         } else {
+         } else if (Input.GetKeyDown(KeyCode.W)) {
             setDefault();
          }
     }
@@ -34,6 +35,7 @@ public class CameraSwitcher : MonoBehaviour
     }
 
     void setDefault() {
+        SceneManager.LoadScene(0);
         //float[] values = new float[] { 4.566703f, 9.765378f, -4.990725f };
         //float[] rotationValues = new float[] { 0f, 0f, 0f };
 

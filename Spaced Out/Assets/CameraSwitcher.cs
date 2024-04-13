@@ -5,19 +5,39 @@ using UnityEngine;
 public class CameraSwitcher : MonoBehaviour
 {
     public Camera mainCamera;
-    public Camera neptuneCamera;
+
+//Make in order of the planets - neputune,,,,,, ...
+    bool[] cameraIsInView = new bool[] { true };
 
     void Start()
     {
-        mainCamera.gameObject.SetActive(true);
-        neptuneCamera.gameObject.SetActive(false);   
+        mainCamera.gameObject.SetActive(true); 
     }
 
     void Update()
     {
          if (Input.GetKeyDown(KeyCode.Space)) {
-            mainCamera.gameObject.SetActive(!mainCamera.gameObject.activeSelf);
-            neptuneCamera.gameObject.SetActive(!neptuneCamera.gameObject.activeSelf);
+            setNeptuneScene();
+         } else {
+            setDefault();
          }
+    }
+
+    void setNeptuneScene() {
+        //float[] values = new float[] { 17.29f, 30f, 8.99f };
+        //float[] rotationValues = new float[] { 90f, 45f, 0f };
+
+        //mainCamera.transform.position = new Vector3(values[0], values[1], values[2]);
+        //mainCamera.transform.rotation = Quaternion.Euler(rotationValues[0], rotationValues[1], rotationValues[2]);
+
+        SceneManager.LoadScene(1);
+    }
+
+    void setDefault() {
+        //float[] values = new float[] { 4.566703f, 9.765378f, -4.990725f };
+        //float[] rotationValues = new float[] { 0f, 0f, 0f };
+
+        //mainCamera.transform.position = new Vector3(values[0], values[1], values[2]);
+        //mainCamera.transform.rotation = Quaternion.Euler(rotationValues[0], rotationValues[1], rotationValues[2]);
     }
 }

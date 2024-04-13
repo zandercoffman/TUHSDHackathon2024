@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-
     public float moveSpeed = 5f; // Adjust this value to control the speed of camera movement
     public float rotationSpeed = 100f; // Adjust this value to control the speed of camera rotation
+
+    private float mouseX, mouseY;
 
     void Update()
     {
@@ -21,8 +18,11 @@ public class CameraController : MonoBehaviour
         Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
 
-        // Camera Rotation (Optional)
-        float rotateInput = Input.GetAxis("Rotation");
-        transform.Rotate(Vector3.up, rotateInput * rotationSpeed * Time.deltaTime);
+        // Camera Rotation
+        mouseX += Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
+        mouseY -= Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime;
+        mouseY = Mathf.Clamp(mouseY, -90f, 90f); // Limit vertical rotation to prevent flipping
+
+        transform.eulerAngles = new Vector3(mouseY, mouseX, 0);
     }
 }

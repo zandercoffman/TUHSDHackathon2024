@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement3D : MonoBehaviour
 {
-public float speed = 20;
-private Vector3 motion;
-private Rigidbody rb;
-private int firstTimesRun = 100;
+    public float speed = 20;
+    private Vector3 motion;
+    private Rigidbody rb;
+    private int firstTimesRun = 100;
 
 static Quaternion generateQuaterion(string direction)
 {
@@ -29,6 +29,12 @@ void Start()
 {
 rb = GetComponent<Rigidbody>();
 rb.rotation = Quaternion.Euler(0,0,0);
+
+//set the speed to be much faster if the player is traveling between planets
+    if (SceneManager.GetActiveScene().name=="Big")
+    {
+        speed = 50;
+    }
 }
 
 void Update()

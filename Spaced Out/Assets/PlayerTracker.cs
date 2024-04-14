@@ -15,12 +15,20 @@ public class PlayerTracker : MonoBehaviour
     private GameObject ahead;
     private MeshRenderer _renderer;
     public float hideDistance = 1.5f;
+    private float cameraDistance = 20f;
 
     // Start is called before the first frame update
     void Start()
     {
         ahead = new GameObject("ahead");
         _renderer = trackedObject.gameObject.GetComponent<MeshRenderer>();
+
+        //set the speed to be much faster if the player is traveling between planets, and change the camera distance
+        if (SceneManager.GetActiveScene().name=="Big")
+        {
+            updateSpeed = 100;
+            cameraDistance = 5;
+        }
     }
 
     // Update is called once per frame
@@ -34,7 +42,7 @@ public class PlayerTracker : MonoBehaviour
             currentDistance = Mathf.Clamp(currentDistance, 0, maxDistance);
 
             //only move if the camera is farther than 50 away from the shuttle center
-            if (Vector3.Distance(trackedObject.position, transform.position)>20) {
+            if (Vector3.Distance(trackedObject.position, transform.position)>cameraDistance) {
                 transform.position = Vector3.MoveTowards(transform.position, trackedObject.position, updateSpeed * Time.deltaTime);
             }
             transform.LookAt(ahead.transform);

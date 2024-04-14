@@ -9,11 +9,13 @@ public class Question : MonoBehaviour
 {
     // Start is called before the first frame update
     public RawImage questionImage;
+    public RawImage learnMoreImage;
     public TMP_Dropdown dropdown1;
     public TMP_Dropdown dropdown2;
     void Start()
     {
         questionImage.gameObject.SetActive(false);
+        learnMoreImage.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -27,9 +29,23 @@ public class Question : MonoBehaviour
     public void toggleImage() {
         Debug.Log("hello");
         if (questionImage.gameObject.activeSelf == true) {
+            if (learnMoreImage.gameObject.activeSelf == true) {
+                learnMoreImage.gameObject.SetActive(false);
+            }
             questionImage.gameObject.SetActive(false);
         } else {
             questionImage.gameObject.SetActive(true);
+        }
+    }
+
+    public void toggleInformation() {
+        if (learnMoreImage.gameObject.activeSelf == true) {
+            learnMoreImage.gameObject.SetActive(false);
+        } else {
+            if (questionImage.gameObject.activeSelf == true) {
+                questionImage.gameObject.SetActive(false);
+            }
+             learnMoreImage.gameObject.SetActive(true);
         }
     }
 
@@ -48,6 +64,8 @@ public class Question : MonoBehaviour
                     VariableData.curIndex++;
                     SceneManager.LoadScene("Big");
                 }
+                break;
+            case "Saturn":
                 break;
         } 
     }

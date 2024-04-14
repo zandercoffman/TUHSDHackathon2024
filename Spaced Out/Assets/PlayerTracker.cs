@@ -23,7 +23,7 @@ public class PlayerTracker : MonoBehaviour
         ahead = new GameObject("ahead");
         _renderer = trackedObject.gameObject.GetComponent<MeshRenderer>();
 
-        //set the speed to be much faster if the player is traveling between planets, and change the camera distance
+        //set the speed to be much faster if the player is traveling between planets, and change the camera distancw
         if (SceneManager.GetActiveScene().name=="Big")
         {
             updateSpeed = 100;

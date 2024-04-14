@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerTracker : MonoBehaviour
 {
@@ -25,13 +26,25 @@ public class PlayerTracker : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        //ahead.transform.position = trackedObject.position + trackedObject.forward * (maxDistance * 0.25f);
-        //currentDistance += Input.GetAxisRaw(moveAxis) * moveSpeed * Time.deltaTime;
-        //currentDistance = Mathf.Clamp(currentDistance, 0, maxDistance);
-        //transform.position = Vector3.MoveTowards(transform.position, trackedObject.position, updateSpeed * Time.deltaTime);
-        //transform.LookAt(ahead.transform);
-        //_renderer.enabled = (currentDistance > hideDistance);
-        transform.position = trackedObject.position;
-        transform.rotation = trackedObject.rotation;
+        //3rd person
+        if (SceneManager.GetActiveScene().name=="Big")
+        {
+            ahead.transform.position = trackedObject.position + (trackedObject.forward) * (maxDistance * 0.25f);
+            currentDistance += Input.GetAxisRaw(moveAxis) * moveSpeed * Time.deltaTime;
+            currentDistance = Mathf.Clamp(currentDistance, 0, maxDistance);
+
+            //only move if the camera is farther than 50 away from the shuttle center
+            if (Vector3.Distance(trackedObject.position, transform.position)>20) {
+                transform.position = Vector3.MoveTowards(transform.position, trackedObject.position, updateSpeed * Time.deltaTime);
+            }
+            transform.LookAt(ahead.transform);
+            _renderer.enabled = (currentDistance > hideDistance);
+        }
+        else
+        {
+            //first person
+            transform.position = trackedObject.position;
+            transform.rotation = trackedObject.rotation;
+        }
     }
 }

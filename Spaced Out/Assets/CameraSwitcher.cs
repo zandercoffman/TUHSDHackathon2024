@@ -24,6 +24,9 @@ public class CameraSwitcher : MonoBehaviour
             setDefault();
          } else if (Input.GetKeyDown(KeyCode.P)) {
             setSaturn();
+         } else if (Input.GetKeyDown(KeyCode.T)) {
+            showObjects(3);
+            SceneManager.LoadScene(3);
          }
     }
 

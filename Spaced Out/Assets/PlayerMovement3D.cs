@@ -1,12 +1,14 @@
 using UnityEngine;
 using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement3D : MonoBehaviour
 {
-public float speed = 20;
-private Vector3 motion;
-private Rigidbody rb;
-private int firstTimesRun = 100;
+    public float speed = 20;
+    private Vector3 motion;
+    private Rigidbody rb;
+    private int firstTimesRun = 100;
 
 static Quaternion generateQuaterion(string direction)
 {
@@ -27,6 +29,12 @@ void Start()
 {
 rb = GetComponent<Rigidbody>();
 rb.rotation = Quaternion.Euler(0,0,0);
+
+//set the speed to be much faster if the player is traveling between planets
+    if (SceneManager.GetActiveScene().name=="Big")
+    {
+        speed = 50;
+    }
 }
 
 void Update()
@@ -35,22 +43,17 @@ void Update()
     float horiz = Input.GetAxisRaw("Horizontal");
     float forwardBack = Input.GetAxisRaw("Vertical");
 
-    //get vertical input
-    float vert = 0f;
-    if (Input.GetKey(KeyCode.Z))
+    //prevent the space shuttle from flying sideways or backwards
+    if (SceneManager.GetActiveScene().name=="Big")
     {
-        vert = 1f;
+        horiz = 0;
+        if (forwardBack<0)
+        {
+            forwardBack=0;
+        }
     }
-    else if (Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift))
-    {
-        vert = -1f;
-    }
-
-    //get the angle of the player in degrees (angle rotated around the z axis (up and down))
-    float angle = rb.rotation.eulerAngles[1];
-    
 //figure out the direction of motion and magnitude using a vector created using the input rotated by a quaternion representing the player rotation
-motion = Quaternion.Euler(0, angle, 0) * new Vector3(horiz, vert, forwardBack);	
+motion = rb.rotation * new Vector3(horiz, 0, forwardBack);	
 
 //scale the vector by the player speed
 rb.velocity = motion * speed;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerTracker : MonoBehaviour
 {
@@ -14,24 +15,44 @@ public class PlayerTracker : MonoBehaviour
     private GameObject ahead;
     private MeshRenderer _renderer;
     public float hideDistance = 1.5f;
+    private float cameraDistance = 20f;
 
     // Start is called before the first frame update
     void Start()
     {
         ahead = new GameObject("ahead");
         _renderer = trackedObject.gameObject.GetComponent<MeshRenderer>();
+
+        //set the speed to be much faster if the player is traveling between planets, and change the camera distance
+        if (SceneManager.GetActiveScene().name=="Big")
+        {
+            updateSpeed = 100;
+            cameraDistance = 5;
+        }
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        //ahead.transform.position = trackedObject.position + trackedObject.forward * (maxDistance * 0.25f);
-        //currentDistance += Input.GetAxisRaw(moveAxis) * moveSpeed * Time.deltaTime;
-        //currentDistance = Mathf.Clamp(currentDistance, 0, maxDistance);
-        //transform.position = Vector3.MoveTowards(transform.position, trackedObject.position, updateSpeed * Time.deltaTime);
-        //transform.LookAt(ahead.transform);
-        //_renderer.enabled = (currentDistance > hideDistance);
-        transform.position = trackedObject.position;
-        transform.rotation = trackedObject.rotation;
+        //3rd person
+        if (SceneManager.GetActiveScene().name=="Big")
+        {
+            ahead.transform.position = trackedObject.position + (trackedObject.forward) * (maxDistance * 0.25f);
+            currentDistance += Input.GetAxisRaw(moveAxis) * moveSpeed * Time.deltaTime;
+            currentDistance = Mathf.Clamp(currentDistance, 0, maxDistance);
+
+            //only move if the camera is farther than 50 away from the shuttle center
+            if (Vector3.Distance(trackedObject.position, transform.position)>cameraDistance) {
+                transform.position = Vector3.MoveTowards(transform.position, trackedObject.position, updateSpeed * Time.deltaTime);
+            }
+            transform.LookAt(ahead.transform);
+            _renderer.enabled = (currentDistance > hideDistance);
+        }
+        else
+        {
+            //first person
+            transform.position = trackedObject.position;
+            transform.rotation = trackedObject.rotation;
+        }
     }
 }

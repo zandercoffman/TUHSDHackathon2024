@@ -360,7 +360,6 @@
 "Assets/PlayerTracker.cs"
 "Assets/Question.cs"
 "Assets/SceneSwitcher.cs"
-"Assets/script.cs"
 "Assets/VariableData.cs"
 -langversion:9.0
 

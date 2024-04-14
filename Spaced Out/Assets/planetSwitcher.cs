@@ -43,8 +43,6 @@ public class planetSwitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(mercury.position);
-        Debug.Log(Vector3.Distance(mercury.position, shuttle.position));
             
         if (Vector3.Distance(mercury.position, shuttle.position)<.5*48.79) {
             showObjects(1);

@@ -27,3 +27,11 @@ sceneSetups:
   isLoaded: 1
   isActive: 0
   isSubScene: 0
+- path: Assets/Uranus.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Jupiter.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0

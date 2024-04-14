@@ -358,6 +358,7 @@
 "Assets/PlayerMovement3D.cs"
 "Assets/PlayerTracker.cs"
 "Assets/SceneSwitcher.cs"
+"Assets/VariableData.cs"
 -langversion:9.0
 
 /deterministic

@@ -3,7 +3,11 @@ sceneSetups:
   isLoaded: 1
   isActive: 0
   isSubScene: 0
-- path: Assets/Neptune.unity
+- path: Assets/Scenes/Neptune.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/Saturn.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

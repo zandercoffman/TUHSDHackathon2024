@@ -22,6 +22,8 @@ public class CameraSwitcher : MonoBehaviour
             setNeptuneScene();
          } else if (Input.GetKeyDown(KeyCode.R)) {
             setDefault();
+         } else if (Input.GetKeyDown(KeyCode.P)) {
+            setSaturn();
          }
     }
 
@@ -61,5 +63,10 @@ public class CameraSwitcher : MonoBehaviour
 
         //mainCamera.transform.position = new Vector3(values[0], values[1], values[2]);
         //mainCamera.transform.rotation = Quaternion.Euler(rotationValues[0], rotationValues[1], rotationValues[2]);
+    }
+
+    void setSaturn() {
+        showObjects(2);
+        SceneManager.LoadScene(2);
     }
 }

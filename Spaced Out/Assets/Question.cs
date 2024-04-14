@@ -59,13 +59,18 @@ public class Question : MonoBehaviour
         switch (currentScene.name) {
             //For each person: add your cases here
             case "Neptune":
-                if (drop1 == "7" && drop2 == "True") {
+                if (drop1 == "5,431.04 m/s" && drop2 == "165.08 years") {
                     VariableData.planetsCompleted[0] = true;
                     VariableData.curIndex++;
                     SceneManager.LoadScene("Big");
                 }
                 break;
             case "Saturn":
+                break;
+            case "Uranus":
+                if (drop1 == "6,800.62 m/s" && drop2 == "") {
+                    
+                }
                 break;
         } 
     }

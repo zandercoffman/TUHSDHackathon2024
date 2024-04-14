@@ -27,6 +27,9 @@ public class CameraSwitcher : MonoBehaviour
          } else if (Input.GetKeyDown(KeyCode.T)) {
             showObjects(3);
             SceneManager.LoadScene(3);
+         } else if (Input.GetKeyDown(KeyCode.K)) {
+            showObjects(4);
+            SceneManager.LoadScene(4);
          }
     }
 

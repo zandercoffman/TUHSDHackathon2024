@@ -1,3 +1,5 @@
+# JUDGES: If you are getting code to look at, look in the "Zander" branch
+
 # TUHSD Hackathon 2024
 * Project created by Zander Coffman, Kiretan Amin, Daniel Briggs, and Darius Collins in the advanced division.
 ## Focus:

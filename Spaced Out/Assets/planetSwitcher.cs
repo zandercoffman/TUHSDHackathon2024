@@ -38,43 +38,49 @@ public class planetSwitcher : MonoBehaviour
     void Start()
     { 
         showObjects(0);
-    }
+        
 
+        //if the user is returning from a planet, restore the previous coordinates
+        Vector3 landingCoordinates = SharedData.Instance.getLandingCoordinates();
+
+    }
+    void switchToPlanet(int planetNumber)
+    {
+        showObjects(planetNumber);
+        SceneManager.LoadScene(planetNumber);
+
+        //store landing coordinates (store the position a little bit above (relative to the planet) from the true landing position)
+        SharedData.Instance.setLandingCoordinates(shuttle.position);
+    }
     // Update is called once per frame
     void Update()
-    {
+    {   
+    
             
         if (Vector3.Distance(mercury.position, shuttle.position)<.5*48.79) {
-            showObjects(1);
-            SceneManager.LoadScene(1);
+            switchToPlanet(1);
         }
         else if (Vector3.Distance(venus.position, shuttle.position)<.5*121.04) {
-            showObjects(2);
-            SceneManager.LoadScene(2);
+            switchToPlanet(2);
         }
         else if (Vector3.Distance(earth.position, shuttle.position)<.5*127.56) {
-            showObjects(3);
-            SceneManager.LoadScene(3);
+            switchToPlanet(3);
         }
         else if (Vector3.Distance(mars.position, shuttle.position)<.5*67.92) {
-            showObjects(4);
-            SceneManager.LoadScene(4);
+            switchToPlanet(4);
         }
         else if (Vector3.Distance(jupiter.position, shuttle.position)<.5*1429.84) {
-            showObjects(5);
-            SceneManager.LoadScene(5);
+            switchToPlanet(5);
         }
         else if (Vector3.Distance(saturn.position, shuttle.position)<.5*1205.36) {
-            showObjects(6);
-            SceneManager.LoadScene(6);
+            switchToPlanet(6);
         }
         else if (Vector3.Distance(uranus.position, shuttle.position)<.5*511.18) {
-            showObjects(7);
-            SceneManager.LoadScene(7);
+            switchToPlanet(7);
         }
         else if (Vector3.Distance(neptune.position, shuttle.position)<.5*495.28) {
-            showObjects(8);
-            SceneManager.LoadScene(8);
+            Debug.Log(Vector3.Distance(neptune.position, shuttle.position));
+            switchToPlanet(8);
         }
     }
 }

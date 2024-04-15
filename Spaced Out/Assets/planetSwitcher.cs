@@ -43,7 +43,7 @@ public class planetSwitcher : MonoBehaviour
         
 
         //if the user is returning from a planet, restore the previous coordinates
-        Vector3 landingCoordinates = SharedData.Instance.getLandingCoordinates();
+        //Vector3 landingCoordinates = SharedData.Instance.getLandingCoordinates();
 
     }
     void switchToPlanet(int planetNumber)

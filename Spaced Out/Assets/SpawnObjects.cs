@@ -32,7 +32,7 @@ public class SpawnObjects : MonoBehaviour
             {
                 spawn -= 1;
 
-                Vector3 v3Pos = transform.position + new Vector3(Random.value * 80f - 40f, -40, Random.value * 80f - 40f);
+                Vector3 v3Pos = transform.position + new Vector3(Random.value * 80f - 20f, Random.value * 80f - 20f, 80f);
 
                 Quaternion qRotation = Quaternion.Euler(0, Random.value * 360f, Random.value * 30f);
 

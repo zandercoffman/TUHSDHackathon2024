@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -597,7 +597,7 @@ Transform:
   m_GameObject: {fileID: 462869373}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.5667033, y: -5.4, z: -4.9907246}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1651,7 +1651,7 @@ Transform:
   m_GameObject: {fileID: 1353298717}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.3420201, z: -0, w: 0.9396927}
-  m_LocalPosition: {x: 360.3778, y: 225.40396, z: -140.06512}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1669,7 +1669,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a661750871fc9b4788fd94de88cc367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnAsteroids: []
+  spawnAsteroids:
+  - {fileID: 151664, guid: fa49e460baf435b4780da7196c2ab473, type: 3}
+  - {fileID: 141316, guid: 84cc3cd234dfc9d4d9d2e92c0eb0af75, type: 3}
+  - {fileID: 130102, guid: 04d0bf4be9447154188d86f6e3b8dce9, type: 3}
   difficulty: 40
 --- !u!4 &1358784760 stripped
 Transform:
@@ -1932,6 +1935,8 @@ GameObject:
   - component: {fileID: 1753397585}
   - component: {fileID: 1753397586}
   - component: {fileID: 1753397587}
+  - component: {fileID: 1753397589}
+  - component: {fileID: 1753397588}
   m_Layer: 0
   m_Name: Shuttle
   m_TagString: Untagged
@@ -1969,7 +1974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ee77f4accd00b948bd007e419e83704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 100
 --- !u!54 &1753397585
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2061,6 +2066,41 @@ MonoBehaviour:
   saturn: {fileID: 1254444023}
   uranus: {fileID: 1029396410}
   neptune: {fileID: 132225464}
+--- !u!114 &1753397588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753397582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5101a0ed05e57d347b2173ac0822dd90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &1753397589
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753397582}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 7.2421913
+  m_Height: 7
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1826456805
 GameObject:
   m_ObjectHideFlags: 0

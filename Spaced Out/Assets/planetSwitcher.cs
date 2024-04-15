@@ -19,6 +19,7 @@ public class planetSwitcher : MonoBehaviour
     public Rigidbody neptune;
 
     void showObjects(int index) {
+        Debug.Log("fjlskjdlkfs");
         for (int i = 0; i < SceneManager.sceneCount; i++) {
             if (i == index) {
                 GameObject[] objectsInScene = SceneManager.GetSceneAt(i).GetRootGameObjects();
@@ -37,6 +38,7 @@ public class planetSwitcher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     { 
+        
         showObjects(0);
         
 
@@ -50,7 +52,7 @@ public class planetSwitcher : MonoBehaviour
         SceneManager.LoadScene(planetNumber);
 
         //store landing coordinates (store the position a little bit above (relative to the planet) from the true landing position)
-        SharedData.Instance.setLandingCoordinates(shuttle.position);
+        //SharedData.Instance.setLandingCoordinates(shuttle.position);
     }
     // Update is called once per frame
     void Update()

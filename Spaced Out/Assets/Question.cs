@@ -60,57 +60,41 @@ public class Question : MonoBehaviour
             //For each person: add your cases here
             case "Neptune":
                 if (drop1 == "5,431.04 m/s" && drop2 == "165.08 years") {
-                    VariableData.planetsCompleted[VariableData.curIndex] = true;
-                    VariableData.curIndex++;
                     SceneManager.LoadScene("Big");
                 }
                 break;
             case "Saturn":
                 if (drop1 == "9,668.19 m/s" && drop2 == "29.26 years") {
-                    VariableData.planetsCompleted[VariableData.curIndex] = true;
-                    VariableData.curIndex++;
                     SceneManager.LoadScene("Big");
                 }
                 break;
             case "Uranus":
                 if (drop1 == "6,800.62 m/s" && drop2 == "84.08 years") {
-                   VariableData.planetsCompleted[VariableData.curIndex] = true;
-                    VariableData.curIndex++;
                     SceneManager.LoadScene("Big"); 
                 }
                 break;
             case "Jupiter":
                 if (drop1 == "13,061.70 m/s" && drop2 == "11.87 years") {
-                    VariableData.planetsCompleted[VariableData.curIndex] = true;
-                    VariableData.curIndex++;
                     SceneManager.LoadScene("Big");
                 }
                 break;
             case "Mars":
                 if (drop1 == "24,128.04 m/s" && drop2 == "1.88 years") {
-                    VariableData.planetsCompleted[VariableData.curIndex] = true;
-                    VariableData.curIndex++;
                     SceneManager.LoadScene("Big");
                 }
                 break;
             case "Earth":
                 if (drop1 == "29.747.04 m/s" && drop2 == "1 year") {
-                    VariableData.planetsCompleted[VariableData.curIndex] = true;
-                    VariableData.curIndex++;
                     SceneManager.LoadScene("Big");
                 }
                 break;
             case "Venus":
                 if (drop1 == "35,057.23 m/s" && drop2 == "0.61 years") {
-                    VariableData.planetsCompleted[VariableData.curIndex] = true;
-                    VariableData.curIndex++;
                     SceneManager.LoadScene("Big");
                 }
                 break;
             case "Mercury":
                 if (drop1 == "47,875.43 m/s" && drop2 == "0.24 years") {
-                    VariableData.planetsCompleted[VariableData.curIndex] = true;
-                    VariableData.curIndex++;
                     SceneManager.LoadScene("Big");
                 }
                 break;

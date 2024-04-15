@@ -1816,10 +1816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bef74df9da9f1c408f6561c5fde1ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionImage: {fileID: 565861614}
-  learnMoreImage: {fileID: 624414598}
-  dropdown1: {fileID: 1169652680}
-  dropdown2: {fileID: 1645135187}
 --- !u!1 &809136233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,12 +1936,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d0a1cbe2ea30049ba0384f0fac6e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackedObject: {fileID: 1987655160}
-  maxDistance: 10
-  moveSpeed: 20
-  updateSpeed: 10
-  currentDistance: 5
-  hideDistance: 1.5
 --- !u!45 &930478593
 Skybox:
   m_ObjectHideFlags: 0
@@ -2013,7 +2003,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -359, y: 201}
+  m_AnchoredPosition: {x: -341.3, y: 201}
   m_SizeDelta: {x: 250, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &987943181
@@ -4453,7 +4443,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ee77f4accd00b948bd007e419e83704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
 --- !u!54 &1987655156
 Rigidbody:
   m_ObjectHideFlags: 0

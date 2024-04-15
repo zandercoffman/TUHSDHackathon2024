@@ -2061,7 +2061,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ee77f4accd00b948bd007e419e83704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
 --- !u!54 &842486722
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2542,8 +2541,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbad99ab79e1b5b4ca1a719a8dcd0a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Mars
-  index: 6
 --- !u!135 &963501078
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2925,7 +2922,7 @@ RectTransform:
   m_GameObject: {fileID: 1131499349}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1175162107}
@@ -2933,7 +2930,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -748, y: 421}
+  m_AnchoredPosition: {x: -357.9, y: 224.1}
   m_SizeDelta: {x: 250, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1131499351
@@ -4287,12 +4284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d0a1cbe2ea30049ba0384f0fac6e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackedObject: {fileID: 842486719}
-  maxDistance: 10
-  moveSpeed: 20
-  updateSpeed: 10
-  currentDistance: 5
-  hideDistance: 1.5
 --- !u!45 &1763775533
 Skybox:
   m_ObjectHideFlags: 0
@@ -4387,7 +4378,7 @@ RectTransform:
   m_GameObject: {fileID: 1841572379}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2116455925}
@@ -4398,7 +4389,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 627, y: 118}
+  m_AnchoredPosition: {x: 257, y: -5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1841572381
@@ -4413,10 +4404,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bef74df9da9f1c408f6561c5fde1ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionImage: {fileID: 2116455923}
-  learnMoreImage: {fileID: 805235224}
-  dropdown1: {fileID: 1970963335}
-  dropdown2: {fileID: 1552661147}
 --- !u!1 &1852536156
 GameObject:
   m_ObjectHideFlags: 0

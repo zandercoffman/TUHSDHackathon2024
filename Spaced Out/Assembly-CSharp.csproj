@@ -61,15 +61,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\RandomRotator.cs" />
-    <Compile Include="Assets\DetectionPlanet.cs" />
     <Compile Include="Assets\SpawnObjects.cs" />
     <Compile Include="Assets\PlanetPlayerMovement.cs" />
     <Compile Include="Assets\player.cs" />
+    <Compile Include="Assets\SharedData.cs" />
     <Compile Include="Assets\Scripts\Destroy.cs" />
     <Compile Include="Assets\PlayerMovement3D.cs" />
     <Compile Include="Assets\planetSwitcher.cs" />
     <Compile Include="Assets\AsteroidMove.cs" />
-    <Compile Include="Assets\VariableData.cs" />
     <Compile Include="Assets\NPCInteract.cs" />
     <Compile Include="Assets\Question.cs" />
     <Compile Include="Assets\PlayerTracker.cs" />

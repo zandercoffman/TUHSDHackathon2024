@@ -3,6 +3,22 @@ sceneSetups:
   isLoaded: 1
   isActive: 1
   isSubScene: 0
+- path: Assets/Mercury.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Venus.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Earth.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Mars.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
 - path: Assets/Scenes/Saturn.unity
   isLoaded: 1
   isActive: 0
@@ -11,7 +27,11 @@ sceneSetups:
   isLoaded: 1
   isActive: 0
   isSubScene: 0
-- path: Assets/Mercury.unity
+- path: Assets/Uranus.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Jupiter.unity
   isLoaded: 1
   isActive: 0
   isSubScene: 0

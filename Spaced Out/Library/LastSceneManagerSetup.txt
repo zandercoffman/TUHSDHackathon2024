@@ -19,11 +19,11 @@ sceneSetups:
   isLoaded: 1
   isActive: 0
   isSubScene: 0
-- path: Assets/Scenes/Saturn.unity
+- path: Assets/Jupiter.unity
   isLoaded: 1
   isActive: 0
   isSubScene: 0
-- path: Assets/Neptune.unity
+- path: Assets/Scenes/Saturn.unity
   isLoaded: 1
   isActive: 0
   isSubScene: 0
@@ -31,7 +31,7 @@ sceneSetups:
   isLoaded: 1
   isActive: 0
   isSubScene: 0
-- path: Assets/Jupiter.unity
+- path: Assets/Neptune.unity
   isLoaded: 1
   isActive: 0
   isSubScene: 0
